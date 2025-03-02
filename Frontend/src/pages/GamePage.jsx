@@ -33,7 +33,7 @@
       const handleRegister = async (username) => {
         try {
           // First, check if the user already exists by fetching the user profile
-          const profileResponse = await fetch(`https://globetrotter-challenge-tozv.vercel.app//api/user/profile/${username}`);
+          const profileResponse = await fetch(`https://globetrotter-challenge-tozv.vercel.app/api/user/profile/${username}`);
           
           if (profileResponse.ok) {
             // If the user exists, fetch the profile data
@@ -42,7 +42,7 @@
             setError(""); // Clear any previous errors
           } else {
             // If the profile does not exist, proceed with registration
-            const registerResponse = await fetch("https://globetrotter-challenge-tozv.vercel.app//api/user/register", {
+            const registerResponse = await fetch("https://globetrotter-challenge-tozv.vercel.app/api/user/register", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ username }),

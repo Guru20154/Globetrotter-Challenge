@@ -1,5 +1,5 @@
 const ChallengeFriend = ({ username }) => {
-    const inviteLink = `https://globetrotter-challenge-tozv.vercel.app/challenge?inviter=${username}`;
+    const inviteLink = `https://globetrotter-challenge-delta.vercel.app/challenge?inviter=${username}`;
   
     const handleShare = () => {
       const shareText = `Hey! Challenge me in Globetrotter! Can you beat my score? 🎉\n\nPlay here: ${inviteLink}`;

@@ -10,6 +10,7 @@ app.use(cors({
   origin: "https://globetrotter-challenge-delta.vercel.app/",
   credentials: true,     
 }))
+app.options('*', cors());
 app.use(express.json());
 app.use("/api", gameRoutes);
 app.use("/api/user", userRoutes);

@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://globetrotter-challenge-delta.vercel.app/",
   credentials: true,     
 }))
 app.use(express.json());

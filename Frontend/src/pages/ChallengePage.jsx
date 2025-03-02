@@ -9,7 +9,7 @@ const ChallengePage = () => {
 
   useEffect(() => {
     if (inviter) {
-      fetch(`http://localhost:3000/api/user/profile/${inviter}`)
+      fetch(`https://globetrotter-challenge-tozv.vercel.app//api/user/profile/${inviter}`)
         .then((response) => response.json())
         .then((data) => setInviterScore(data.user.score));
     }

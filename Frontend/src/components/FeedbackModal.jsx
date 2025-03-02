@@ -3,14 +3,14 @@ import Confetti from "react-confetti";
 
 const FeedbackModal = ({ feedback, onNext }) => {
   const [dimensions, setDimensions] = useState({
-    width: window.innerWidth*0.98,
+    width: window.innerWidth * 0.98,
     height: window.innerHeight,
   });
 
   useEffect(() => {
     const handleResize = () => {
       setDimensions({
-        width: window.innerWidth*0.98,
+        width: window.innerWidth * 0.98,
         height: window.innerHeight,
       });
     };
@@ -23,11 +23,13 @@ const FeedbackModal = ({ feedback, onNext }) => {
 
   return (
     <>
-      <Confetti
-        width={dimensions.width} // Width as per the screen width
-        height={dimensions.height} // Height as per the screen height
-        recycle={false} // Confetti will not repeat after completion
-      />
+      {feedback.isCorrect && (
+        <Confetti
+          width={dimensions.width} // Width as per the screen width
+          height={dimensions.height} // Height as per the screen height
+          recycle={false} // Confetti will not repeat after completion
+        />
+      )}
       <div style={styles.modalContainer}>
         <h2 style={feedback.isCorrect ? styles.correctHeading : styles.incorrectHeading}>
           {feedback.isCorrect ? "🎉 Correct!" : "😢 Incorrect!"}
